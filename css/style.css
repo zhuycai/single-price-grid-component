@@ -1,0 +1,148 @@
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body, h3, p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    background: var(--light-gray);
+}
+
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.component {
+    display: grid;
+    min-width: 298px;
+    max-width: 668px;
+}
+
+.componentItem {
+    padding: .6em 1.4em 1.8em;
+    line-height: 1.8em;
+    color: var(--light-gray);
+}
+
+.componentItem:nth-child(1) {
+    color: var(--grayish-blue);
+    background: white;
+}
+
+.componentItem:nth-child(2) {
+    background: hsl(179, 67%, 40%);
+}
+
+.componentItem:nth-child(3) {
+    background: hsl(179, 52%, 51%);
+}
+
+.componentItem_title {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 2.8em;
+    color: white;
+}
+
+.componentItem_title-cyan {
+    color: var(--cyan);
+}
+
+.componentItem_para-brightYellow {
+    margin-bottom: .8em;
+    color: var(--bright-yellow);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.componentItem_text-em {
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.price {
+    /* line-height: 1.4em; */
+    margin: .5em 0 .7em;
+    margin-right: .2em;
+}
+
+.componentItem_text-translucentGray {
+    color: rgba(209, 200, 200, 0.87);
+}
+
+.signUpBtn {
+    display: block;
+    margin-top: 2.6em;
+    max-width: 298px;
+    border-radius: .4em;
+    color: white;
+    box-shadow: 0 .4em 1em 0 rgba(105, 104, 104, 0.703);
+    text-decoration: none;
+    text-align: center;
+    line-height: 3em;
+    background: var(--bright-yellow);
+}
+
+.signUpBtn:hover {
+    box-shadow: 0 .5em 1.2em 0 rgba(105, 104, 104, 0.795);
+    color: var(--cyan);
+    background: rgb(205, 249, 133);
+}
+
+footer {
+    margin-top: 5em;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* inner inline ele centered vertically */
+.inlineCenteredV {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 668px) {
+    .component {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 't t'
+                             'bl br';
+    }
+
+    .componentItem:nth-child(1) {
+        grid-area: t;
+    }
+
+    .componentItem:nth-child(2) {
+        grid-area: bl;
+    }
+
+    .componentItem:nth-child(3) {
+        grid-area: br;
+    }
+}
